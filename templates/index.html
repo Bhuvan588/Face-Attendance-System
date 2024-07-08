@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Attendance System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+    <!--Importing Poppins Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+</head>
+<body id="body">
+
+    <div id = "heading">
+        Face Attendance System
+    </div>
+
+    <div class="video_stream">
+        <img src="{{ url_for('video_feed') }}" width="572" height="430">
+    </div>
+
+    <div>
+        <div class="button_group">
+
+            <button onclick="startRecording()" class="glow-on-hover">Start Attendance</button>
+            <button onClick="stopRecording()" class="button-75" role="button"><span class="text">Stop Attendance</span></button>
+
+        </div>
+    </div>
+
+    <script>
+        function startRecording(){
+            fetch('/start_recording', {method: 'POST'})
+        }
+        function stopRecording(){
+            fetch('stop_recording', {method: 'POST'})
+        }
+    </script>
+    
+</body>
+</html>
