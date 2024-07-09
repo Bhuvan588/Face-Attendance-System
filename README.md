@@ -28,3 +28,8 @@ Why did I think of making this? Well our college's ID card contains out photo an
 - Pyzbar - Used to detect and decode barcodes
 - Flask - Used for routing
 - Face-recognition - Library to store face encodings and to compare faces
+
+## Note:
+- Make sure to generate a custom barcode for your use from various online sites.
+- Make sure that the face and barcode are shown to the camera at the same time
+- It may not detect barcodes easily so try to adjust the barcode
